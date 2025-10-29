@@ -1,0 +1,117 @@
+<div class="lado-a-lado">
+<video controls width="100">
+  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/falo-de-ti-as-pedras-das-estradas.mp4" type="video/mp4">
+  Seu navegador não suporta vídeo HTML5.
+</video>
+
+<div><strong>Falo de ti às pedras das estradas...</strong>
+
+<p>Falo de ti às pedras das estradas,<br/>
+E ao sol que é louro como o teu olhar,<br/>
+Falo ao rio, que desdobra a faiscar,<br/>
+Vestidos de princesas e de fadas;</p>
+
+<p>Falo às gaivotas de asas desdobradas,<br/>
+Lembrando lenços brancos a acenar,<br/>
+E aos mastros que apunhalam o luar<br/>
+Na solidão das noites consteladas;</p>
+
+<p>Digo os anseios, os sonhos, os desejos<br/>
+Donde a tua alma, tonta de vitória,<br/>
+Levanta ao céu a torre dos meus beijos!</p>
+
+<p>E os meus gritos de amor, cruzando o espaço,<br/>
+Sobre os brocados fúlgidos da glória,<br/>
+São astros que me tombam do regaço!</p>
+</div>
+</div>
+
+<br/> 
+
+<div class='lado-a-lado'>
+<div><strong>Panteísmo</strong>
+<p>Tarde de brasa a arder, sol de verão<br/>
+Cingindo, voluptuoso, o horizonte...<br/>
+Sinto-me luz e cor, ritmo e clarão<br/>
+Dum verso triunfal de Anacreonte!</p>
+
+<p>Vejo-me asa no ar, erva no chão,<br/>
+Oiço-me gota de água a rir, na fonte,<br/>
+E a curva altiva e dura do Marão<br/>
+É o meu corpo transformado em monte!</p>
+
+<p>E de bruços na terra penso e cismo<br/>
+Que, neste meu ardente panteísmo<br/>
+Nos meus sentidos postos e absortos</p>
+
+<p>Nas coisas luminosas deste mundo,<br/>
+A minha alma é o túmulo profundo<br/>
+Onde dormem, sorrindo, os deuses mortos!</p>
+</div>
+
+<video controls width="100">
+  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/panteismo.mp4" type="video/mp4">
+  Seu navegador não suporta vídeo HTML5.
+</video>
+</div>
+
+<br/> 
+
+<div class='lado-a-lado'>
+<video controls width="100">
+  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/quem-fez-ao-sapo.mp4" type="video/mp4">
+  Seu navegador não suporta vídeo HTML5.
+</video>
+
+<div><strong>Quem fez ao sapo o leito carmesim</strong>
+<p>Quem fez ao sapo o leito carmesim<br/>
+de rosas desfolhadas à noitinha?<br/>
+E quem vestiu de monja a andorinha,<br/>
+e perfumou as sombras do jardim?</p>
+
+<p>Quem cinzelou estrelas no jasmim?<br/>
+Quem deu esses cabelos de rainha<br/>
+ao girassol? Quem fez o mar? E a minha<br/>
+alma a sangrar? Quem me criou a mim?</p>
+
+<p>Quem fez os homens e deu vida aos lobos?<br/>
+Santa Teresa em místicos arroubos?<br/>
+Os monstros? E os profetas? E o luar?</p>
+
+<p>Quem nos deu asas para andar de rastros?<br/>
+Quem nos deu olhos para ver os astros<br/>
+- Sem nos dar braços para os alcançar?</p>
+</div>
+
+</div>
+
+<br/> 
+
+<div class='lado-a-lado'>
+<div>
+<strong>Não ser</strong>
+<p>Quem me dera voltar à inocência<br/>
+Das coisas brutas, sãs, inanimadas,<br/>
+Despir o vão orgulho, a incoerência:<br/>
+Mantos rotos de estátuas mutiladas!</p>
+
+<p>Ah! Arrancar às carnes laceradas<br/>
+Seu mísero segredo de consciência!<br/>
+Ah! Poder ser apenas florescência<br/>
+De astros em puras noites deslumbradas!</p>
+
+<p>Ser nostálgico choupo ao entardecer,<br/>
+De ramos graves, plácidos, absortos<br/>
+Na mágica tarefa de viver!</p>
+
+<p>Ser haste, seiva, ramaria inquieta,<br/>
+Erguer ao sol o coração dos mortos<br/>
+Na urna de ouro de uma flor aberta!...<p>
+</div>
+
+<video controls width="100">
+  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/nao-ser.mp4" type="video/mp4">
+  Seu navegador não suporta vídeo HTML5.
+</video>
+
+</div>

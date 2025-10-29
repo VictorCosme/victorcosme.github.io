@@ -21,6 +21,24 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .lado-a-lado {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .lado-a-lado video,
+    .lado-a-lado img {
+      flex: 0 0 300px;
+      border-radius: 12px;
+    }
+
+    .lado-a-lado>div {
+      flex: 1;
+      min-width: 250px;
+    }
   </style>
 </head>
 
