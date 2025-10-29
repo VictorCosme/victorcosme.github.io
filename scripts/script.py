@@ -1,9 +1,8 @@
 import os, re, markdown, datetime, html
 
 # === CONFIGURAÇÕES ===
-SITE_URL = "https://seunome.github.io"
-SITE_TITLE = "Blog de João"
-SITE_DESC = "Reflexões sobre liberdade, desejo e consciência."
+SITE_URL = "https://victorcosme.github.io"
+SITE_TITLE = "Victor Cosme"
 
 # === CAMINHOS ===
 MD_DIR = "md_posts"
@@ -12,7 +11,7 @@ HTML_DIR = "posts"
 os.makedirs(HTML_DIR, exist_ok=True)
 
 # === LER TEMPLATE DO POST ===
-with open("template_post.html", encoding="utf-8") as f:
+with open("scripts/template_post.html", encoding="utf-8") as f:
     POST_TEMPLATE = f.read()
 
 # === COLETAR POSTS ===
@@ -71,7 +70,6 @@ h1, h2 {{ color: #111; }}
 </head>
 <body>
 <h1>{SITE_TITLE}</h1>
-<p>{SITE_DESC}</p>
 
 <h2>Posts recentes</h2>
 <ul>
@@ -110,7 +108,6 @@ rss = f"""<?xml version="1.0" encoding="UTF-8"?>
 <channel>
     <title>{SITE_TITLE}</title>
     <link>{SITE_URL}</link>
-    <description>{SITE_DESC}</description>
     <language>pt-br</language>
     <lastBuildDate>{datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')}</lastBuildDate>
     {rss_items}
