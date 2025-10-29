@@ -1,14 +1,11 @@
 import os, re, markdown, datetime, html
 
-# === CONFIGURAÇÕES ===
-SITE_URL = "https://victorcosme.github.io"
-SITE_TITLE = "Victor Cosme"
-
-# === CAMINHOS ===
-MD_DIR = "md_posts"
-HTML_DIR = "posts"
-
-os.makedirs(HTML_DIR, exist_ok=True)
+from config import (
+    SITE_URL,
+    SITE_TITLE,
+    MD_DIR,
+    HTML_DIR
+)
 
 # === LER TEMPLATE DO POST ===
 with open("scripts/template_post.html", encoding="utf-8") as f:
