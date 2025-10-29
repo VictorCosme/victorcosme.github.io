@@ -1,8 +1,9 @@
-import os, re, markdown, datetime
+import os, re, markdown, datetime, html
 
 # === CONFIGURAÇÕES ===
-SITE_URL = "https://victorcosme.github.io"
-SITE_TITLE = "Victor Cosme"
+SITE_URL = "https://seunome.github.io"
+SITE_TITLE = "Blog de João"
+SITE_DESC = "Reflexões sobre liberdade, desejo e consciência."
 
 # === CAMINHOS ===
 MD_DIR = "md_posts"
@@ -48,7 +49,8 @@ for filename in sorted(os.listdir(MD_DIR), reverse=True):
             "title": title,
             "slug": slug,
             "date": date,
-            "url": f"{SITE_URL}/posts/{slug}.html"
+            "url": f"{SITE_URL}/posts/{slug}.html",
+            "content_html": html_content
         })
 
 # === GERAR INDEX.HTML ===
@@ -69,6 +71,7 @@ h1, h2 {{ color: #111; }}
 </head>
 <body>
 <h1>{SITE_TITLE}</h1>
+<p>{SITE_DESC}</p>
 
 <h2>Posts recentes</h2>
 <ul>
@@ -89,20 +92,27 @@ with open("index.html", "w", encoding="utf-8") as f:
 # === GERAR FEED.RSS ===
 rss_items = ""
 for p in posts[:15]:  # últimos 15 posts
+    safe_html = html.escape(p["content_html"])  # evita quebrar o XML
     rss_items += f"""
     <item>
         <title>{p['title']}</title>
         <link>{p['url']}</link>
         <guid>{p['url']}</guid>
         <pubDate>{p['date'].strftime('%a, %d %b %Y 00:00:00 +0000')}</pubDate>
+        <description><![CDATA[{p["content_html"]}]]></description>
+        <content:encoded><![CDATA[{p["content_html"]}]]></content:encoded>
     </item>
     """
 
 rss = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
     <title>{SITE_TITLE}</title>
     <link>{SITE_URL}</link>
+    <description>{SITE_DESC}</description>
+    <language>pt-br</language>
+    <lastBuildDate>{datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')}</lastBuildDate>
     {rss_items}
 </channel>
 </rss>
@@ -111,4 +121,4 @@ rss = f"""<?xml version="1.0" encoding="UTF-8"?>
 with open("feed.xml", "w", encoding="utf-8") as f:
     f.write(rss)
 
-print("✅ Blog gerado com sucesso!")
+print("✅ Blog e RSS gerados com sucesso!")
