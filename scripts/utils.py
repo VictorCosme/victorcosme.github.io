@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Victor Cosme</title>
-<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml" />
+from config import SITE_TITLE, AUTHOR_MAIL
 
+def get_home_page():
+    return "index.html"
+
+def get_about_page():
+    return "about.html"
+
+def get_archive_page():
+    return "#"
+
+def get_rss_link():
+    return "feed.xml"
+
+
+
+def generate_header():
+    header = f"""
+    <header>
+        <h1>
+            {SITE_TITLE}
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="{get_home_page()}">Início</a></li>
+                <li><a href="{get_archive_page()}">Arquivo</a></li>
+                <li><a href="{get_about_page()}">Sobre mim</a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to={AUTHOR_MAIL}" target="_blank">E-mail</a></li>
+                <li><a href="{get_rss_link()}" target="_blank">RSS</a></li>
+            </ul>
+        </nav>
+        <hr/>
+    </header>
+    """
+    return header
+
+
+def generate_footer():
+    footer = f"""
+    <footer>
+    
+    </footer>
+    """
+    return footer
+
+
+def generate_style_tag():
+    style = """
     <style>
         body { 
             font-family: sans-serif; 
@@ -52,38 +93,5 @@
             vertical-align: middle;         /* Centraliza verticalmente */
         }
     </style>
-    
-</head>
-<body>
-
-    <header>
-        <h1>
-            Victor Cosme
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#">Arquivo</a></li>
-                <li><a href="about.html">Sobre mim</a></li>
-                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=victorcosmemelo@gmail.com" target="_blank">E-mail</a></li>
-                <li><a href="feed.xml" target="_blank">RSS</a></li>
-            </ul>
-        </nav>
-        <hr/>
-    </header>
-    
-
-<h2>Posts recentes</h2>
-<ul>
-<li><a href="posts/Sonetos-de-Florbela-Espanca.html">Sonetos De Florbela Espanca</a> — 29/10/2025</li>
-<li><a href="posts/Hello-World.html">Hello World</a> — 29/10/2025</li>
-
-</ul>
-
-
-    <footer>
-    
-    </footer>
-    
-
-</body></html>
+    """
+    return style

@@ -1,5 +1,6 @@
 import os, re, markdown, datetime, html
 
+import utils
 from config import (
     SITE_URL,
     SITE_TITLE,
@@ -58,15 +59,10 @@ index_html = f"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <title>{SITE_TITLE}</title>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml" />
-<style>
-body {{ font-family: sans-serif; max-width: 700px; margin: 40px auto; line-height: 1.6; color: #333; }}
-a {{ color: #0077cc; text-decoration: none; }}
-a:hover {{ text-decoration: underline; }}
-h1, h2 {{ color: #111; }}
-</style>
+{utils.generate_style_tag()}
 </head>
 <body>
-<h1>{SITE_TITLE}</h1>
+{utils.generate_header()}
 
 <h2>Posts recentes</h2>
 <ul>
@@ -75,9 +71,11 @@ h1, h2 {{ color: #111; }}
 for p in posts:
     index_html += f'<li><a href="posts/{p["slug"]}.html">{p["title"]}</a> — {p["date"].strftime("%d/%m/%Y")}</li>\n'
 
-index_html += """
+index_html += f"""
 </ul>
-<p><a href="feed.xml">RSS</a></p>
+
+{utils.generate_footer()}
+
 </body></html>
 """
 
