@@ -25,7 +25,6 @@ def generate_header():
                 <li><a href="{get_home_page()}">Início</a></li>
                 <li><a href="{get_archive_page()}">Arquivo</a></li>
                 <li><a href="{get_about_page()}">Sobre mim</a></li>
-                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to={AUTHOR_MAIL}" target="_blank">E-mail</a></li>
                 <li><a href="{get_rss_link()}" target="_blank">RSS</a></li>
             </ul>
         </nav>
@@ -86,12 +85,21 @@ def generate_style_tag():
             font-size: 16px;                /* Ajuste conforme o tamanho desejado */
             gap: 8px;                       /* Espaço entre imagem e texto */
         }
-
         footer a img {
             width: 1em;                     /* Mesmo tamanho da altura do texto */
             height: 1em;                    /* Mantém proporção */
             vertical-align: middle;         /* Centraliza verticalmente */
         }
+        .h-card {
+            display: inline-flex;
+            gap: 2em;
+        }
+        .u-photo {
+            border-radius: 100%;
+            max-width: 10em;
+            max-height: 10em;
+        }
+
     </style>
     """
     return style

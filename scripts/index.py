@@ -69,7 +69,7 @@ index_html = f"""<!DOCTYPE html>
 """
 
 for p in posts:
-    index_html += f'<li><a href="posts/{p["slug"]}.html">{p["title"]}</a> — {p["date"].strftime("%d/%m/%Y")}</li>\n'
+    index_html += f'<li>{p["date"].strftime("%d %b, %Y")} — <a href="posts/{p["slug"]}.html">{p["title"]}</a></li>\n'
 
 index_html += f"""
 </ul>

@@ -45,12 +45,21 @@
             font-size: 16px;                /* Ajuste conforme o tamanho desejado */
             gap: 8px;                       /* Espaço entre imagem e texto */
         }
-
         footer a img {
             width: 1em;                     /* Mesmo tamanho da altura do texto */
             height: 1em;                    /* Mantém proporção */
             vertical-align: middle;         /* Centraliza verticalmente */
         }
+        .h-card {
+            display: inline-flex;
+            gap: 2em;
+        }
+        .u-photo {
+            border-radius: 100%;
+            max-width: 10em;
+            max-height: 10em;
+        }
+
     </style>
     
 </head>
@@ -65,13 +74,23 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="#">Arquivo</a></li>
                 <li><a href="about.html">Sobre mim</a></li>
-                <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=victorcosmemelo@gmail.com" target="_blank">E-mail</a></li>
                 <li><a href="feed.xml" target="_blank">RSS</a></li>
             </ul>
         </nav>
         <hr/>
     </header>
     
+
+<div class="h-card">
+  <img class="u-photo" src="media/assets/avatar.jpg" alt="Foto de Victor Cosme">
+  <div>
+  <p class="p-name">João Victor Cosme Melo</p>
+  <p class="p-note">Estudante de Ciência da Computação. Estritamente vegetariano. Chato de galochas.</p>
+  <p><a class="u-url" href="https://victorcosme.github.io">Meu blog</a> (you're already here, silly)</p>
+  <p><a class="u-email" href="mailto:victorcosmemelo@gmail.com">victorcosmemelo@gmail.com</a></p>
+  </div>
+</div>
+
 
     <footer>
     
