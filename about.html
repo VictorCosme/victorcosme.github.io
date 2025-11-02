@@ -1,98 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<title>Victor Cosme</title>
-<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Victor Cosme — Sobre</title>
+    <meta name="description" content="Victor Cosme — Saiba mais sobre mim.">
+    <meta name="keywords" content="Victor Cosme, blog pessoal, IndieWeb">
 
-    <style>
-        body { 
-            font-family: sans-serif; 
-            max-width: 700px; 
-            margin: 40px auto; 
-            line-height: 1.6; 
-            color: #333;
-        }
-        a { 
-            color: #0077cc; 
-            text-decoration: none;
-        }
-        a:hover { 
-            text-decoration: underline;
-        }
-        h1, h2 {
-            color: #111;
-        }
-        nav ul {
-            list-style: none;          /* remove os marcadores de lista */
-            display: flex;             /* coloca os itens lado a lado */
-            justify-content: justify;   
-            gap: 20px;                 /* espaço entre os itens */
-            padding: 0;                /* remove padding padrão */
-            margin: 0;                 /* remove margem padrão */
-        }
-        nav li {
-            display: inline;           /* mantém inline para links */
-        }
-        footer * {
-            align-items: center;
-        }
-        footer a {
-            display: inline-flex;           /* Coloca imagem e texto lado a lado */
-            align-items: center;            /* Alinha verticalmente */
-            text-decoration: none;          /* Remove o sublinhado */
-            color: inherit;                 /* Mantém a cor do texto */
-            font-size: 16px;                /* Ajuste conforme o tamanho desejado */
-            gap: 8px;                       /* Espaço entre imagem e texto */
-        }
-        footer a img {
-            width: 1em;                     /* Mesmo tamanho da altura do texto */
-            height: 1em;                    /* Mantém proporção */
-            vertical-align: middle;         /* Centraliza verticalmente */
-        }
-        .h-card {
-            display: inline-flex;
-            gap: 2em;
-        }
-        .u-photo {
-            border-radius: 100%;
-            max-width: 10em;
-            max-height: 10em;
-        }
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 
-    </style>
-    
+    <!-- Perfis federados (IndieWeb) -->
+    <link rel="me" href="mailto:victorcosmemelo@gmail.com">
+    <link rel="me" href="https://github.com/victorcosme">
+
 </head>
-<body>
 
+<body>
+    
     <header>
-        <h1>
-            Victor Cosme
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="#">Arquivo</a></li>
-                <li><a href="about.html">Sobre mim</a></li>
-                <li><a href="feed.xml" target="_blank">RSS</a></li>
-            </ul>
-        </nav>
-        <hr/>
+    <h1 class="p-name">Deveras Victor</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="archive.html">Arquivo</a></li>
+            <li><a href="about.html">Sobre mim</a></li>
+            <li><a href="feed.xml" target="_blank">RSS</a></li>
+        </ul>
+    </nav>
+    <hr />
     </header>
     
-
-<div class="h-card">
-  <img class="u-photo" src="media/assets/avatar.jpg" alt="Foto de Victor Cosme">
-  <div>
-  <p class="p-name">João Victor Cosme Melo</p>
-  <p class="p-note">Estudante de Ciência da Computação. Estritamente vegetariano. Chato de galochas.</p>
-  <p><a class="u-url" href="https://victorcosme.github.io">Meu blog</a> (you're already here, silly)</p>
-  <p><a class="u-email" href="mailto:victorcosmemelo@gmail.com">victorcosmemelo@gmail.com</a></p>
-  </div>
-</div>
-
-
-    <footer>
+    <section class="h-card">
+        <img class="u-photo" src="media/assets/avatar.jpg" alt="Foto de Victor Cosme">
+        <div class="p-card-content">
+            <p class="p-name">Victor Cosme</p>
+            <p class="p-note">Estudante de Ciência da Computação. Estritamente vegetariano. Chato de galochas.</p>
+            <p>
+                Blog: <a class="u-url" href="https://victorcosme.github.io/" rel="nofollow">victorcosme.github.io/</a>
+            </p>
+            <p>Email: <a class="u-email" href="mailto:victorcosmemelo@gmail.com">victorcosmemelo@gmail.com</a></p>
+            <p>Perfis federados:
+                <a rel="me" href="https://github.com/victorcosme">GitHub</a>
+            </p>
+        </div>
+    </section>
     
+    <footer>
+        <p>© 2025 Victor Cosme — Todos os direitos reservados.</p>
     </footer>
     
+</body>
+
+</html>

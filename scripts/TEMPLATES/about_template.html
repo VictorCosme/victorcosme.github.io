@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    
+    <title>{{AUTHOR_NAME}} — Sobre</title>
+    <meta name="description" content="{{AUTHOR_NAME}} — Saiba mais sobre mim.">
+    <meta name="keywords" content="{{AUTHOR_NAME}}, blog pessoal, IndieWeb">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{RSS_FEED_LINK}}"/>
+
+    <!-- Perfis federados (IndieWeb) -->
+    <link rel="me" href="mailto:{{AUTHOR_MAIL}}">
+    <link rel="me" href="https://{{AUTHOR_GITHUB}}">
+
+</head>
+
+<body>
+    {{header}}
+    <section class="h-card">
+        <img class="u-photo" src="media/assets/avatar.jpg" alt="Foto de {{AUTHOR_NAME}}">
+        <div class="p-card-content">
+            <p class="p-name">{{AUTHOR_NAME}}</p>
+            <p class="p-note">Estudante de Ciência da Computação. Estritamente vegetariano. Chato de galochas.</p>
+            <p>
+                Blog: <a class="u-url" href="https://{{SITE_URL}}" rel="nofollow">{{SITE_URL}}</a>
+            </p>
+            <p>Email: <a class="u-email" href="mailto:{{AUTHOR_MAIL}}">{{AUTHOR_MAIL}}</a></p>
+            <p>Perfis federados:
+                <a rel="me" href="https://{{AUTHOR_GITHUB}}">GitHub</a>
+            </p>
+        </div>
+    </section>
+    {{footer}}
+</body>
+
+</html>

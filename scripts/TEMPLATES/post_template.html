@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../style.css"/>
+
+  <title>{{POST_TITLE}} — {{SITE_TITLE}}</title>
+
+  <!-- Identidade do autor-->
+  <link rel="author" href="https://{{SITE_URL}}{{ABOUT_PAGE_LINK}}" />
+  <link rel="me" href="mailto:{{AUTHOR_MAIL}}" />
+  <link rel="me" href="https:{{AUTHOR_GITHUB}}"/>
+</head>
+
+<body>
+  <a href="../{{INDEX_PAGE_LINK}}">← Voltar</a>
+
+  <article class="h-entry">
+    <h1 class="p-name">{{POST_TITLE}}</h1>
+
+    <p>
+      <time class="dt-published" datetime="{{POST_DATE_YYYY_MM_DD}}">{{POST_DATE_DD_bb_YYY}}</time> — por
+      <a class="p-author h-card" href="https://{{SITE_URL}}{{ABOUT_PAGE_LINK}}">{{AUTHOR_NAME}}</a>
+    </p>
+
+    <div class="e-content">
+      {{POST_CONTENT}}
+    </div>
+
+    <p class="tags">{{POST_TAGS}}</p>
+
+    <footer>
+      <p>
+        <a class="u-url" href="https://{{SITE_URL}}{{POSTS_DIR}}{{POST_PATH}}"">
+          Link permanente
+        </a>
+      </p>
+    </footer>
+  </article>
+</body>
+</html>

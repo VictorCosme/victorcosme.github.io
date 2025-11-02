@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+import utils
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="../style.css"/>
-
-  <title>Por que criei um blog? — Deveras Victor</title>
-
-  <!-- Identidade do autor-->
-  <link rel="author" href="https://victorcosme.github.io/about.html" />
-  <link rel="me" href="mailto:victorcosmemelo@gmail.com" />
-  <link rel="me" href="https:github.com/victorcosme"/>
-</head>
-
-<body>
-  <a href="../index.html">← Voltar</a>
-
-  <article class="h-entry">
-    <h1 class="p-name">Por que criei um blog?</h1>
-
-    <p>
-      <time class="dt-published" datetime="2025-10-30">30 Oct, 2025</time> — por
-      <a class="p-author h-card" href="https://victorcosme.github.io/about.html">Victor Cosme</a>
-    </p>
-
-    <div class="e-content">
-      
+POST_TITLE = "Por que criei um blog?"
+POST_PATH = "por-que-criei-um-blog.html"
+POST_DATE_YYYY_MM_DD = "2025-10-30"
+POST_TAGS = ['dailylog', 'reflexoes']
+POST_CONTENT = """
 <p>Eu sempre quis ter um <em>blog</em>. </p>
 <p>Lembro que desde a época do Orkut eu flertava com a possibilidade de criar um. Digo: criava, mas nunca mantinha. É que, por mais que eu goste de escrever, só sei escrever bonito quando estou triste e preciso desopilar. Acredito que isso aconteça porque eu sou muito crítico de mim mesmo. No fundo, no fundo, acho que todos somos um pouco críticos e prepotentes demais. </p>
 <p>Digo "prepotente" porque não é como se alguém realmente fosse ler o meu blog. E, no entanto, escrevo com a sensação de que meu texto tem a capacidade de mudar o mundo.</p>
@@ -38,20 +16,7 @@
 <blockquote>
 <p><strong>Por que eu resolvi criar um blog agora?</strong></p>
 </blockquote>
-<p>Porque eu apaguei o Instagram e o WhatsApp e queria um cantinho só meu pra postar minhas coisinhas (preferencialmente num lugar público para que todos acessem, mas recôndito para que ninguém veja).</p>
-    </div>
+<p>Porque eu apaguei o Instagram e o WhatsApp e queria um cantinho só meu pra postar minhas coisinhas (preferencialmente num lugar público para que todos acessem, mas recôndito para que ninguém veja).</p>"""
 
-    <p class="tags"><a href='tags/dailylog' rel='tag'>dailylog</a>
-<a href='tags/reflexao' rel='tag'>reflexao</a>
-</p>
 
-    <footer>
-      <p>
-        <a class="u-url" href="https://victorcosme.github.io/posts/por-que-criei-um-blog.html"">
-          Link permanente
-        </a>
-      </p>
-    </footer>
-  </article>
-</body>
-</html>
+utils.postagem(POST_TITLE, POST_DATE_YYYY_MM_DD, POST_CONTENT, POST_TAGS, POST_PATH)

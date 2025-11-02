@@ -1,6 +1,8 @@
-"""Pipeline para geracao do blog completo"""
+from config import *
+from utils import *
 
-import subprocess
-
-subprocess.run(["python", "scripts/index.py"])
-subprocess.run(["python", "scripts/about.py"])
+# update_posts()
+# index_page()
+# archive_page()
+about_page()
+# feed_rss()

@@ -1,12 +1,18 @@
-import os
+# Site info
+SITE_TITLE = "Deveras Victor"
+SITE_URL = "victorcosme.github.io/"
 
-# === CONFIGURAÇÕES ===
-SITE_URL = "https://victorcosme.github.io"
-SITE_TITLE = "Victor Cosme"
+# Author info
+AUTHOR_NAME = "Victor Cosme"
 AUTHOR_MAIL = "victorcosmemelo@gmail.com"
+AUTHOR_GITHUB = "github.com/victorcosme"
 
-# === CAMINHOS ===
-MD_DIR = "md_posts"
-HTML_DIR = "posts"
+# Site links
+INDEX_PAGE_LINK = "index.html"
+ARCHIVE_PAGE_LINK = "archive.html"
+ABOUT_PAGE_LINK = "about.html"
+RSS_FEED_LINK = "feed.xml"
+SITEMAP_LINK = "sitemap.xml"
 
-os.makedirs(HTML_DIR, exist_ok=True)
+# Directory tree
+POSTS_DIR = "posts/"

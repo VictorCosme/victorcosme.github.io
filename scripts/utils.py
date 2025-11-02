@@ -1,105 +1,84 @@
-from config import SITE_TITLE, AUTHOR_MAIL
+from datetime import datetime
+from config import *
 
-def get_home_page():
-    return "index.html"
-
-def get_about_page():
-    return "about.html"
-
-def get_archive_page():
-    return "#"
-
-def get_rss_link():
-    return "feed.xml"
+def open_template(template):
+    """Retorna o texto (pre-html) do template indicado."""
+    with open(f"scripts/TEMPLATES/{template}_template.html", mode='r', encoding='UTF-8') as f:
+        return f.read()
 
 
+def save(content, path):
+    """Salva o content (geralmente HTML) ao arquivo com o path indicado."""
+    with open(path, mode='w', encoding='UTF-8') as f:
+        f.write(content)
 
-def generate_header():
+
+def postagem(title, post_date_yyyy_mm_dd, content, tag_list, path):
+    """Gera a página de uma postagem."""
+    post_html = open_template('post')
+
+    post_html = post_html.replace("{{POST_TITLE}}", title)
+    post_html = post_html.replace("{{SITE_TITLE}}", SITE_TITLE)
+    post_html = post_html.replace("{{ABOUT_PAGE_LINK}}", ABOUT_PAGE_LINK)
+    post_html = post_html.replace("{{INDEX_PAGE_LINK}}", INDEX_PAGE_LINK)
+    post_html = post_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
+    post_html = post_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
+    post_html = post_html.replace("{{POST_DATE_YYYY_MM_DD}}", post_date_yyyy_mm_dd)
+    post_html = post_html.replace("{{POST_DATE_DD_bb_YYY}}", datetime.strptime(post_date_yyyy_mm_dd, "%Y-%m-%d").strftime("%d %b, %Y"))
+    post_html = post_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
+    post_html = post_html.replace("{{POST_CONTENT}}", content)
+    post_html = post_html.replace("{{POST_TAGS}}", tags(tag_list))
+    post_html = post_html.replace("{{SITE_URL}}", SITE_URL)
+    post_html = post_html.replace("{{POSTS_DIR}}", POSTS_DIR)
+    post_html = post_html.replace("{{POST_PATH}}", path)
+
+    save(post_html, POSTS_DIR+path)
+
+
+def about_page():
+    """Gera a página 'Sobre mim' do blog."""
+    about_html = open_template('about')
+
+    about_html = about_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
+    about_html = about_html.replace("{{RSS_FEED_LINK}}", RSS_FEED_LINK)
+    about_html = about_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
+    about_html = about_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
+    about_html = about_html.replace("{{header}}", header())
+    about_html = about_html.replace("{{SITE_URL}}", SITE_URL)
+    about_html = about_html.replace("{{footer}}", footer())
+
+    save(about_html, "about.html")
+
+
+def tags(tag_list):
+    """Gera as tags de uma postagem a partir da lista de tags"""
+    tags = ""
+    for tag in tag_list:
+        tags += f"<a href='tags/{tag}' rel='tag'>{tag}</a>\n"
+    return tags
+
+
+def header():
     header = f"""
     <header>
-        <h1>
-            {SITE_TITLE}
-        </h1>
-        <nav>
-            <ul>
-                <li><a href="{get_home_page()}">Início</a></li>
-                <li><a href="{get_archive_page()}">Arquivo</a></li>
-                <li><a href="{get_about_page()}">Sobre mim</a></li>
-                <li><a href="{get_rss_link()}" target="_blank">RSS</a></li>
-            </ul>
-        </nav>
-        <hr/>
+    <h1 class="p-name">{SITE_TITLE}</h1>
+    <nav>
+        <ul>
+            <li><a href="{INDEX_PAGE_LINK}">Início</a></li>
+            <li><a href="{ARCHIVE_PAGE_LINK}">Arquivo</a></li>
+            <li><a href="{ABOUT_PAGE_LINK}">Sobre mim</a></li>
+            <li><a href="{RSS_FEED_LINK}" target="_blank">RSS</a></li>
+        </ul>
+    </nav>
+    <hr />
     </header>
     """
     return header
 
-
-def generate_footer():
+def footer():
     footer = f"""
     <footer>
-    
+        <p>© 2025 {AUTHOR_NAME} — Todos os direitos reservados.</p>
     </footer>
     """
     return footer
-
-
-def generate_style_tag():
-    style = """
-    <style>
-        body { 
-            font-family: sans-serif; 
-            max-width: 700px; 
-            margin: 40px auto; 
-            line-height: 1.6; 
-            color: #333;
-        }
-        a { 
-            color: #0077cc; 
-            text-decoration: none;
-        }
-        a:hover { 
-            text-decoration: underline;
-        }
-        h1, h2 {
-            color: #111;
-        }
-        nav ul {
-            list-style: none;          /* remove os marcadores de lista */
-            display: flex;             /* coloca os itens lado a lado */
-            justify-content: justify;   
-            gap: 20px;                 /* espaço entre os itens */
-            padding: 0;                /* remove padding padrão */
-            margin: 0;                 /* remove margem padrão */
-        }
-        nav li {
-            display: inline;           /* mantém inline para links */
-        }
-        footer * {
-            align-items: center;
-        }
-        footer a {
-            display: inline-flex;           /* Coloca imagem e texto lado a lado */
-            align-items: center;            /* Alinha verticalmente */
-            text-decoration: none;          /* Remove o sublinhado */
-            color: inherit;                 /* Mantém a cor do texto */
-            font-size: 16px;                /* Ajuste conforme o tamanho desejado */
-            gap: 8px;                       /* Espaço entre imagem e texto */
-        }
-        footer a img {
-            width: 1em;                     /* Mesmo tamanho da altura do texto */
-            height: 1em;                    /* Mantém proporção */
-            vertical-align: middle;         /* Centraliza verticalmente */
-        }
-        .h-card {
-            display: inline-flex;
-            gap: 2em;
-        }
-        .u-photo {
-            border-radius: 100%;
-            max-width: 10em;
-            max-height: 10em;
-        }
-
-    </style>
-    """
-    return style
