@@ -229,11 +229,60 @@ def recent_posts(posts):
     return recent
 
 
+def build_archive(posts):
+    """Gera a página de arquivo geral e páginas de tags."""
+    archive_html = open_template('archive')
+
+    # Agrupa posts por tag
+    tags_dict = {}
+    for post in posts:
+        for tag in post['tags']:
+            tags_dict.setdefault(tag, []).append(post)
+
+    # Cria se não existir o diretório 'tags'
+    os.makedirs("tags", exist_ok=True)
+
+    # Gera páginas individuais por tag
+    for tag, tag_posts in tags_dict.items():
+        tag_items = "\n".join(
+            f'<li>{p["date"]} — <a href="../{POSTS_DIR}{p["path"]}">{p["title"]}</a></li>'
+            for p in tag_posts
+        )
+        tag_html = open_template('tag')
+        tag_html = tag_html.replace("{{TAG_NAME}}", tag)
+        tag_html = tag_html.replace("{{SITE_TITLE}}", SITE_TITLE)
+        tag_html = tag_html.replace("{{header}}", header())
+        tag_html = tag_html.replace("{{footer}}", footer())
+        tag_html = tag_html.replace("{{TAG_POSTS}}", f"<ul>{tag_items}</ul>")
+        tag_html = tag_html.replace("{{SITE_URL}}", SITE_URL)
+
+        save(tag_html, f"tags/{tag}.html")
+        print(f"[OK] Página da tag '{tag}' criada.")
+
+    # Monta o arquivo geral
+    all_tags_html = "\n".join(
+        f"<h3><a href='tags/{tag}.html'>{tag}</a></h3>\n<ul>" +
+        "\n".join(
+            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
+            for p in tag_posts
+        ) + "\n</ul>"
+        for tag, tag_posts in tags_dict.items()
+    )
+
+    archive_html = archive_html.replace("{{SITE_TITLE}}", SITE_TITLE)
+    archive_html = archive_html.replace("{{header}}", header())
+    archive_html = archive_html.replace("{{footer}}", footer())
+    archive_html = archive_html.replace("{{ALL_TAGS}}", all_tags_html)
+
+    save(archive_html, ARCHIVE_PAGE_LINK)
+    print("[OK] Página archive.html criada.")
+
+
 def main():
     posts = load_posts()
     update_posts(posts)
     build_index(posts)
-    # build_archive()
+    build_archive(posts)
     build_about_page()
     build_feed(posts)
     print("[✔] Site regenerado com sucesso.")
