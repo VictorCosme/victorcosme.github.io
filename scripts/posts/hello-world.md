@@ -1,14 +1,12 @@
-import utils
+---
+draft: false
+title: Hello World
+date: 2025-10-29
+tags: [dailylog, reflexao]
+path: hello-world.html
+---
 
-POST_TITLE = "Hello World"
-POST_PATH = "hello-world.html"
-POST_DATE_YYYY_MM_DD = "2025-10-29"
-POST_TAGS = ['dailylog', 'reflexao']
-POST_CONTENT = """
 <p>Hoje fui a loja de roupas para comprar uma calça <em lang='en'>jeans</em>. Eu experimentei uns dez modelos distintos e, apesar disto, nenhum deles me serviu a contento. Comprei a menos pior. </p>
 <p>Ao chegar em casa, fui rever fotos antigas no meu celular. Ainda preciso dar cabo as que restaram do meu último relacionamento. No entanto, eu preferiria mantê-las, porque passei tantos anos deletando arquivos antigos (num pretenso 'minimalismo' digital) que acabei sem foto alguma e sem lembranças.</p>
 <p>Estou pretendendo voltar para a academia. O ambiente é socialmente desgastante, mas a ideia de usar minha força para ajudar a quem precise motiva-me, e realizá-la enche-me de prazer.</p>
 <p>Descobri que para atender bem as pessoas é preciso "chaleirar" elas um pouco. Descobri também que a visão da morte, ainda que não erice o pelo, torna as noites mais longas e o sono mais leve.</p>
-"""
-
-utils.postagem(POST_TITLE, POST_DATE_YYYY_MM_DD, POST_CONTENT, POST_TAGS, POST_PATH)

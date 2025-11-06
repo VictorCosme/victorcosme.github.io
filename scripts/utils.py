@@ -1,5 +1,12 @@
+import os
+
+import yaml
+import markdown
 from datetime import datetime
+
+import utils
 from config import *
+
 
 def open_template(template):
     """Retorna o texto (pre-html) do template indicado."""
@@ -84,3 +91,50 @@ def footer():
     </footer>
     """
     return footer
+
+
+def update_posts():
+    """Lê arquivos .md com front matter YAML e gera os HTMLs correspondentes."""
+    POSTS_DIR = "scripts/posts"
+
+    for filename in os.listdir(POSTS_DIR):
+        if not filename.endswith(".md"):
+            continue
+
+        path = os.path.join(POSTS_DIR, filename)
+        with open(path, encoding="utf-8") as f:
+            raw = f.read()
+
+        # Divide front matter (YAML) e corpo (Markdown)
+        if raw.startswith("---"):
+            parts = raw.split("---", 2)
+            if len(parts) < 3:
+                print(f"[AVISO] Front matter mal formatado em {filename}")
+                continue
+            header, body = parts[1], parts[2]
+        else:
+            print(f"[AVISO] Sem front matter em {filename}")
+            continue
+
+        try:
+            meta = yaml.safe_load(header)
+        except yaml.YAMLError as e:
+            print(f"[ERRO] YAML inválido em {filename}: {e}")
+            continue
+
+        if meta.get("draft", False):
+            continue
+
+        # Converte o corpo de Markdown para HTML
+        html_content = markdown.markdown(body, extensions=["fenced_code", "tables"])
+
+        # Extrai metadados (com valores padrão)
+        title = meta.get("title", "Sem título")
+        date = meta.get("date", "0000-00-00")
+        tags = meta.get("tags", [])
+        path_out = meta.get("path", filename.replace(".md", ".html"))
+
+        # Gera o HTML final via utilitário existente
+        utils.postagem(title, str(date), html_content, tags, path_out)
+
+        print(f"[OK] {filename} → {path_out}")
