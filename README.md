@@ -1,8 +1,6 @@
 # Como escrever um post:
-1. Abra o arquivo scripts/post.py.
-2. Preencha as variáveis como se pede
-3. Execute o script (será gerado um arquivo HTML no diretorio de posts)
-
+1. Escreva em scripts/posts/seu-arquivo.md.
+3. Execute scipts/build.py 
 
 # Hierarquia de diretórios
 - index.html: é a pagina inicial do blog, contendo um feed cronologico das postagens do blog
