@@ -40,7 +40,7 @@ def save(content, path):
         f.write(content)
 
 
-def postagem(title, post_date_yyyy_mm_dd, content, tag_list, path):
+def build_post(title, post_date_yyyy_mm_dd, content, tag_list, path):
     """Gera a página de uma postagem."""
     post_html = open_template('post')
 
@@ -169,7 +169,7 @@ def load_posts():
 def update_posts(posts):
     """Gera os HTMLs individuais de cada post."""
     for post in posts:
-        postagem(post["title"], post["date"], post["html"], post["tags"], post["path"])
+        build_post(post["title"], post["date"], post["html"], post["tags"], post["path"])
         print(f"[OK] {post['title']} → {post['path']}")
 
 

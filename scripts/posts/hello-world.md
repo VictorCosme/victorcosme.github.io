@@ -1,8 +1,7 @@
 ---
-draft: false
 title: Hello World
 date: 2025-10-29
-tags: [dailylog, reflexao]
+tags: [pessoal, prosa]
 path: hello-world.html
 ---
 

@@ -1,8 +1,7 @@
 ---
-draft: false
 title: Por que criei um blog?
 date: 2025-10-30
-tags: [dailylog, reflexao]
+tags: [pessoal, prosa]
 path: por-que-criei-um-blog.html
 ---
 
