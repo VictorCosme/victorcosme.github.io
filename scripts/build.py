@@ -4,8 +4,28 @@ import yaml
 import markdown
 from datetime import datetime
 
-import utils
-from config import *
+# Site info
+SITE_TITLE = "Deveras Victor"
+SITE_URL = "victorcosme.github.io/"
+
+# Author info
+AUTHOR_NAME = "Victor Cosme"
+AUTHOR_MAIL = "victorcosmemelo@gmail.com"
+AUTHOR_GITHUB = "github.com/victorcosme"
+
+# Site links
+INDEX_PAGE_LINK = "index.html"
+ARCHIVE_PAGE_LINK = "archive.html"
+ABOUT_PAGE_LINK = "about.html"
+RSS_FEED_LINK = "feed.xml"
+SITEMAP_LINK = "sitemap.xml"
+
+# Directory tree
+POSTS_DIR = "posts/"
+MD_POSTS_DIR = "scripts/posts"
+
+
+
 
 
 def open_template(template):
@@ -95,13 +115,11 @@ def footer():
 
 def update_posts():
     """Lê arquivos .md com front matter YAML e gera os HTMLs correspondentes."""
-    POSTS_DIR = "scripts/posts"
-
-    for filename in os.listdir(POSTS_DIR):
+    for filename in os.listdir(MD_POSTS_DIR):
         if not filename.endswith(".md"):
             continue
 
-        path = os.path.join(POSTS_DIR, filename)
+        path = os.path.join(MD_POSTS_DIR, filename)
         with open(path, encoding="utf-8") as f:
             raw = f.read()
 
@@ -135,6 +153,18 @@ def update_posts():
         path_out = meta.get("path", filename.replace(".md", ".html"))
 
         # Gera o HTML final via utilitário existente
-        utils.postagem(title, str(date), html_content, tags, path_out)
+        postagem(title, str(date), html_content, tags, path_out)
 
         print(f"[OK] {filename} → {path_out}")
+
+def main():
+    update_posts()    # Gere/atualize o html de todos os posts
+    # index_page()      # Atualize a pagina inicial
+    # archive_page()    # Atualize o arquivo de postagens
+    # about_page()        # Atualize meu perfil
+    # feed_rss()        # Atualize o FeedRSS
+    print("[✔] Site regenerado com sucesso.")
+
+
+if __name__ == "__main__":
+    main()
