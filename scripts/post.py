@@ -3,7 +3,7 @@ import utils
 POST_TITLE = "Por que criei um blog?"
 POST_PATH = "por-que-criei-um-blog.html"
 POST_DATE_YYYY_MM_DD = "2025-10-30"
-POST_TAGS = ['dailylog', 'reflexoes']
+POST_TAGS = ['dailylog', 'reflexao']
 POST_CONTENT = """
 <p>Eu sempre quis ter um <em>blog</em>. </p>
 <p>Lembro que desde a época do Orkut eu flertava com a possibilidade de criar um. Digo: criava, mas nunca mantinha. É que, por mais que eu goste de escrever, só sei escrever bonito quando estou triste e preciso desopilar. Acredito que isso aconteça porque eu sou muito crítico de mim mesmo. No fundo, no fundo, acho que todos somos um pouco críticos e prepotentes demais. </p>

@@ -31,6 +31,8 @@ def postagem(title, post_date_yyyy_mm_dd, content, tag_list, path):
     post_html = post_html.replace("{{SITE_URL}}", SITE_URL)
     post_html = post_html.replace("{{POSTS_DIR}}", POSTS_DIR)
     post_html = post_html.replace("{{POST_PATH}}", path)
+    # post_html = post_html.replace("{{header}}", header())
+    post_html = post_html.replace("{{footer}}", footer())
 
     save(post_html, POSTS_DIR+path)
 
