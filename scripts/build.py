@@ -2,7 +2,7 @@ import os
 
 import yaml
 import markdown
-from datetime import datetime
+import datetime
 
 # Site info
 SITE_TITLE = "Deveras Victor"
@@ -22,7 +22,7 @@ SITEMAP_LINK = "sitemap.xml"
 
 # Directory tree
 POSTS_DIR = "posts/"
-MD_POSTS_DIR = "scripts/posts"
+MD_POSTS_DIR = "scripts/posts/"
 
 
 
@@ -51,7 +51,7 @@ def postagem(title, post_date_yyyy_mm_dd, content, tag_list, path):
     post_html = post_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
     post_html = post_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
     post_html = post_html.replace("{{POST_DATE_YYYY_MM_DD}}", post_date_yyyy_mm_dd)
-    post_html = post_html.replace("{{POST_DATE_DD_bb_YYY}}", datetime.strptime(post_date_yyyy_mm_dd, "%Y-%m-%d").strftime("%d %b, %Y"))
+    post_html = post_html.replace("{{POST_DATE_DD_bb_YYY}}", datetime.datetime.strptime(post_date_yyyy_mm_dd, "%Y-%m-%d").strftime("%d %b, %Y"))
     post_html = post_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
     post_html = post_html.replace("{{POST_CONTENT}}", content)
     post_html = post_html.replace("{{POST_TAGS}}", tags(tag_list))
@@ -64,11 +64,12 @@ def postagem(title, post_date_yyyy_mm_dd, content, tag_list, path):
     save(post_html, POSTS_DIR+path)
 
 
-def about_page():
+def build_about_page():
     """Gera a página 'Sobre mim' do blog."""
     about_html = open_template('about')
 
     about_html = about_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
+    about_html = about_html.replace("{{perfis_federados}}", perfis_federados())
     about_html = about_html.replace("{{RSS_FEED_LINK}}", RSS_FEED_LINK)
     about_html = about_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
     about_html = about_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
@@ -76,7 +77,7 @@ def about_page():
     about_html = about_html.replace("{{SITE_URL}}", SITE_URL)
     about_html = about_html.replace("{{footer}}", footer())
 
-    save(about_html, "about.html")
+    save(about_html, ABOUT_PAGE_LINK)
 
 
 def tags(tag_list):
@@ -87,6 +88,15 @@ def tags(tag_list):
     return tags
 
 
+def perfis_federados():
+    perfis = """
+    <!-- Perfis federados (IndieWeb) -->
+    <link rel="me" href="mailto:{{AUTHOR_MAIL}}">
+    <link rel="me" href="https://{{AUTHOR_GITHUB}}">
+    """
+    return perfis
+
+    
 def header():
     header = f"""
     <header>
@@ -113,8 +123,9 @@ def footer():
     return footer
 
 
-def update_posts():
-    """Lê arquivos .md com front matter YAML e gera os HTMLs correspondentes."""
+def load_posts():
+    """Lê todos os arquivos .md com front matter YAML e retorna lista de posts."""
+    posts = []
     for filename in os.listdir(MD_POSTS_DIR):
         if not filename.endswith(".md"):
             continue
@@ -123,46 +134,108 @@ def update_posts():
         with open(path, encoding="utf-8") as f:
             raw = f.read()
 
-        # Divide front matter (YAML) e corpo (Markdown)
-        if raw.startswith("---"):
-            parts = raw.split("---", 2)
-            if len(parts) < 3:
-                print(f"[AVISO] Front matter mal formatado em {filename}")
-                continue
-            header, body = parts[1], parts[2]
-        else:
+        if not raw.startswith("---"):
             print(f"[AVISO] Sem front matter em {filename}")
             continue
 
-        try:
-            meta = yaml.safe_load(header)
-        except yaml.YAMLError as e:
-            print(f"[ERRO] YAML inválido em {filename}: {e}")
+        parts = raw.split("---", 2)
+        if len(parts) < 3:
+            print(f"[AVISO] Front matter mal formatado em {filename}")
             continue
+
+        meta = yaml.safe_load(parts[1])
 
         if meta.get("draft", False):
-            continue
+            continue  # ignora rascunhos
 
-        # Converte o corpo de Markdown para HTML
+        body = parts[2]
         html_content = markdown.markdown(body, extensions=["fenced_code", "tables"])
 
-        # Extrai metadados (com valores padrão)
-        title = meta.get("title", "Sem título")
-        date = meta.get("date", "0000-00-00")
-        tags = meta.get("tags", [])
-        path_out = meta.get("path", filename.replace(".md", ".html"))
+        post = {
+            "title": meta.get("title", "Sem título"),
+            "date": str(meta.get("date", "0000-00-00")),
+            "tags": meta.get("tags", []),
+            "path": meta.get("path", filename.replace(".md", ".html")),
+            "html": html_content,
+        }
 
-        # Gera o HTML final via utilitário existente
-        postagem(title, str(date), html_content, tags, path_out)
+        posts.append(post)
 
-        print(f"[OK] {filename} → {path_out}")
+    # Ordena por data (mais recente primeiro)
+    posts.sort(key=lambda p: p["date"], reverse=True)
+    return posts
+
+
+def update_posts(posts):
+    """Gera os HTMLs individuais de cada post."""
+    for post in posts:
+        postagem(post["title"], post["date"], post["html"], post["tags"], post["path"])
+        print(f"[OK] {post['title']} → {post['path']}")
+
+
+def build_feed(posts):
+    """Gera um feed RSS básico."""
+    items = "\n".join(
+        f"""
+        <item>
+            <title>{p['title']}</title>
+            <link>https://{SITE_URL}{POSTS_DIR}{p['path']}</link>
+            <pubDate>{p['date']}</pubDate>
+            <description><![CDATA[{p['html']}]]></description>
+        </item>
+        """ for p in posts
+    )
+
+    rss = f"""<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>{SITE_TITLE}</title>
+    <link>https://{SITE_URL}</link>
+    <description>Feed de atualizações do blog</description>
+    <lastBuildDate>{datetime.date.today()}</lastBuildDate>
+    {items}
+</channel>
+</rss>"""
+
+    with open(RSS_FEED_LINK, "w", encoding="utf-8") as f:
+        f.write(rss)
+    print("[OK] feed.xml atualizado.")
+
+
+def build_index(posts):
+    index_html = open_template('index')
+    index_html = index_html.replace("{{SITE_TITLE}}", SITE_TITLE)
+    index_html = index_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
+    index_html = index_html.replace("{{RSS_FEED_LINK}}", RSS_FEED_LINK)
+    index_html = index_html.replace("{{perfis_federados}}", perfis_federados())
+    index_html = index_html.replace("{{header}}", header())
+    index_html = index_html.replace("{{footer}}", footer())
+    index_html = index_html.replace("{{recent_posts}}", recent_posts(posts))
+    
+    save(index_html, INDEX_PAGE_LINK)
+
+
+def recent_posts(posts):
+    items = "\n".join(
+        f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
+        for p in posts
+    )
+    recent = f"""
+    <h2>Posts recentes</h2>
+    <ul>
+    {items}
+    </ul>
+    """
+    return recent
+
 
 def main():
-    update_posts()    # Gere/atualize o html de todos os posts
-    # index_page()      # Atualize a pagina inicial
-    # archive_page()    # Atualize o arquivo de postagens
-    # about_page()        # Atualize meu perfil
-    # feed_rss()        # Atualize o FeedRSS
+    posts = load_posts()
+    update_posts(posts)
+    build_index(posts)
+    # build_archive()
+    build_about_page()
+    build_feed(posts)
     print("[✔] Site regenerado com sucesso.")
 
 

@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
 <channel>
-    <title>Victor Cosme</title>
-    <link>https://victorcosme.github.io</link>
-    <language>pt-br</language>
-    <lastBuildDate>Thu, 30 Oct 2025 22:39:05 +0000</lastBuildDate>
+    <title>Deveras Victor</title>
+    <link>https://victorcosme.github.io/</link>
+    <description>Feed de atualizações do blog</description>
+    <lastBuildDate>2025-11-06</lastBuildDate>
     
-    <item>
-        <title>Por Que Criei Um Blog</title>
-        <link>https://victorcosme.github.io/posts/Por-que-criei-um-blog.html</link>
-        <guid>https://victorcosme.github.io/posts/Por-que-criei-um-blog.html</guid>
-        <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
-        <description><![CDATA[<p>Eu sempre quis ter um <em>blog</em>. </p>
+        <item>
+            <title>Por que criei um blog?</title>
+            <link>https://victorcosme.github.io/posts/por-que-criei-um-blog.html</link>
+            <pubDate>2025-10-30</pubDate>
+            <description><![CDATA[<p>Eu sempre quis ter um <em>blog</em>. </p>
 <p>Lembro que desde a época do Orkut eu flertava com a possibilidade de criar um. Digo: criava, mas nunca mantinha. É que, por mais que eu goste de escrever, só sei escrever bonito quando estou triste e preciso desopilar. Acredito que isso aconteça porque eu sou muito crítico de mim mesmo. No fundo, no fundo, acho que todos somos um pouco críticos e prepotentes demais. </p>
 <p>Digo "prepotente" porque não é como se alguém realmente fosse ler o meu blog. E, no entanto, escrevo com a sensação de que meu texto tem a capacidade de mudar o mundo.</p>
 <p>Eu tenho muito medo da responsabilidade que isso me trás. </p>
@@ -24,269 +22,18 @@
 <p><strong>Por que eu resolvi criar um blog agora?</strong></p>
 </blockquote>
 <p>Porque eu apaguei o Instagram e o WhatsApp e queria um cantinho só meu pra postar minhas coisinhas (preferencialmente num lugar público para que todos acessem, mas recôndito para que ninguém veja).</p>]]></description>
-        <content:encoded><![CDATA[<p>Eu sempre quis ter um <em>blog</em>. </p>
-<p>Lembro que desde a época do Orkut eu flertava com a possibilidade de criar um. Digo: criava, mas nunca mantinha. É que, por mais que eu goste de escrever, só sei escrever bonito quando estou triste e preciso desopilar. Acredito que isso aconteça porque eu sou muito crítico de mim mesmo. No fundo, no fundo, acho que todos somos um pouco críticos e prepotentes demais. </p>
-<p>Digo "prepotente" porque não é como se alguém realmente fosse ler o meu blog. E, no entanto, escrevo com a sensação de que meu texto tem a capacidade de mudar o mundo.</p>
-<p>Eu tenho muito medo da responsabilidade que isso me trás. </p>
-<p>O primeiro princípio existencialista afirma que "o homem nada mais é do que aquilo que ele faz de si mesmo". A consequência natural disto é que, criando-nos individualmente, cada indivíduo cria também a imagem do ser humano ideal.</p>
-<p>Eu tenho medo de ser responsável. Sou responsável porque é o jeito. Mas admitir que eu devo assumir as consequências dos meus atos é um ato muito custoso. Talvez seja por isso que eu me dou melhor com crianças e com idosos. </p>
-<p>Com crianças, porque a inocência de quem recém chegou ao mundo e ainda se maravilha com suas cores me exime recordar que às cores do mundo, passado um tempo, os olhos se acostumam, e tudo então passa a afigurar-se alvacento, sem brilho. Com idosos, porque... sei lá, eles são fofos e frágeis, lembram crianças, mesmo os rabugentos. </p>
-<p>Enfim. </p>
-<blockquote>
-<p><strong>Por que eu resolvi criar um blog agora?</strong></p>
-</blockquote>
-<p>Porque eu apaguei o Instagram e o WhatsApp e queria um cantinho só meu pra postar minhas coisinhas (preferencialmente num lugar público para que todos acessem, mas recôndito para que ninguém veja).</p>]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>Sonetos De Florbela Espanca</title>
-        <link>https://victorcosme.github.io/posts/Sonetos-de-Florbela-Espanca.html</link>
-        <guid>https://victorcosme.github.io/posts/Sonetos-de-Florbela-Espanca.html</guid>
-        <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
-        <description><![CDATA[<div class="lado-a-lado">
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/falo-de-ti-as-pedras-das-estradas.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
+        </item>
+        
 
-<div><strong>Falo de ti às pedras das estradas...</strong>
-
-<p>Falo de ti às pedras das estradas,<br/>
-E ao sol que é louro como o teu olhar,<br/>
-Falo ao rio, que desdobra a faiscar,<br/>
-Vestidos de princesas e de fadas;</p>
-
-<p>Falo às gaivotas de asas desdobradas,<br/>
-Lembrando lenços brancos a acenar,<br/>
-E aos mastros que apunhalam o luar<br/>
-Na solidão das noites consteladas;</p>
-
-<p>Digo os anseios, os sonhos, os desejos<br/>
-Donde a tua alma, tonta de vitória,<br/>
-Levanta ao céu a torre dos meus beijos!</p>
-
-<p>E os meus gritos de amor, cruzando o espaço,<br/>
-Sobre os brocados fúlgidos da glória,<br/>
-São astros que me tombam do regaço!</p>
-</div>
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<div><strong>Panteísmo</strong>
-<p>Tarde de brasa a arder, sol de verão<br/>
-Cingindo, voluptuoso, o horizonte...<br/>
-Sinto-me luz e cor, ritmo e clarão<br/>
-Dum verso triunfal de Anacreonte!</p>
-
-<p>Vejo-me asa no ar, erva no chão,<br/>
-Oiço-me gota de água a rir, na fonte,<br/>
-E a curva altiva e dura do Marão<br/>
-É o meu corpo transformado em monte!</p>
-
-<p>E de bruços na terra penso e cismo<br/>
-Que, neste meu ardente panteísmo<br/>
-Nos meus sentidos postos e absortos</p>
-
-<p>Nas coisas luminosas deste mundo,<br/>
-A minha alma é o túmulo profundo<br/>
-Onde dormem, sorrindo, os deuses mortos!</p>
-</div>
-
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/panteismo.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/quem-fez-ao-sapo.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-<div><strong>Quem fez ao sapo o leito carmesim</strong>
-<p>Quem fez ao sapo o leito carmesim<br/>
-de rosas desfolhadas à noitinha?<br/>
-E quem vestiu de monja a andorinha,<br/>
-e perfumou as sombras do jardim?</p>
-
-<p>Quem cinzelou estrelas no jasmim?<br/>
-Quem deu esses cabelos de rainha<br/>
-ao girassol? Quem fez o mar? E a minha<br/>
-alma a sangrar? Quem me criou a mim?</p>
-
-<p>Quem fez os homens e deu vida aos lobos?<br/>
-Santa Teresa em místicos arroubos?<br/>
-Os monstros? E os profetas? E o luar?</p>
-
-<p>Quem nos deu asas para andar de rastros?<br/>
-Quem nos deu olhos para ver os astros<br/>
-Sem nos dar braços para os alcançar?</p>
-</div>
-
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<div>
-<strong>Não ser</strong>
-<p>Quem me dera voltar à inocência<br/>
-Das coisas brutas, sãs, inanimadas,<br/>
-Despir o vão orgulho, a incoerência:<br/>
-Mantos rotos de estátuas mutiladas!</p>
-
-<p>Ah! Arrancar às carnes laceradas<br/>
-Seu mísero segredo de consciência!<br/>
-Ah! Poder ser apenas florescência<br/>
-De astros em puras noites deslumbradas!</p>
-
-<p>Ser nostálgico choupo ao entardecer,<br/>
-De ramos graves, plácidos, absortos<br/>
-Na mágica tarefa de viver!</p>
-
-<p>Ser haste, seiva, ramaria inquieta,<br/>
-Erguer ao sol o coração dos mortos<br/>
-Na urna de ouro de uma flor aberta!...<p>
-</div>
-
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/nao-ser.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-</div>]]></description>
-        <content:encoded><![CDATA[<div class="lado-a-lado">
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/falo-de-ti-as-pedras-das-estradas.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-<div><strong>Falo de ti às pedras das estradas...</strong>
-
-<p>Falo de ti às pedras das estradas,<br/>
-E ao sol que é louro como o teu olhar,<br/>
-Falo ao rio, que desdobra a faiscar,<br/>
-Vestidos de princesas e de fadas;</p>
-
-<p>Falo às gaivotas de asas desdobradas,<br/>
-Lembrando lenços brancos a acenar,<br/>
-E aos mastros que apunhalam o luar<br/>
-Na solidão das noites consteladas;</p>
-
-<p>Digo os anseios, os sonhos, os desejos<br/>
-Donde a tua alma, tonta de vitória,<br/>
-Levanta ao céu a torre dos meus beijos!</p>
-
-<p>E os meus gritos de amor, cruzando o espaço,<br/>
-Sobre os brocados fúlgidos da glória,<br/>
-São astros que me tombam do regaço!</p>
-</div>
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<div><strong>Panteísmo</strong>
-<p>Tarde de brasa a arder, sol de verão<br/>
-Cingindo, voluptuoso, o horizonte...<br/>
-Sinto-me luz e cor, ritmo e clarão<br/>
-Dum verso triunfal de Anacreonte!</p>
-
-<p>Vejo-me asa no ar, erva no chão,<br/>
-Oiço-me gota de água a rir, na fonte,<br/>
-E a curva altiva e dura do Marão<br/>
-É o meu corpo transformado em monte!</p>
-
-<p>E de bruços na terra penso e cismo<br/>
-Que, neste meu ardente panteísmo<br/>
-Nos meus sentidos postos e absortos</p>
-
-<p>Nas coisas luminosas deste mundo,<br/>
-A minha alma é o túmulo profundo<br/>
-Onde dormem, sorrindo, os deuses mortos!</p>
-</div>
-
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/panteismo.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/quem-fez-ao-sapo.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-<div><strong>Quem fez ao sapo o leito carmesim</strong>
-<p>Quem fez ao sapo o leito carmesim<br/>
-de rosas desfolhadas à noitinha?<br/>
-E quem vestiu de monja a andorinha,<br/>
-e perfumou as sombras do jardim?</p>
-
-<p>Quem cinzelou estrelas no jasmim?<br/>
-Quem deu esses cabelos de rainha<br/>
-ao girassol? Quem fez o mar? E a minha<br/>
-alma a sangrar? Quem me criou a mim?</p>
-
-<p>Quem fez os homens e deu vida aos lobos?<br/>
-Santa Teresa em místicos arroubos?<br/>
-Os monstros? E os profetas? E o luar?</p>
-
-<p>Quem nos deu asas para andar de rastros?<br/>
-Quem nos deu olhos para ver os astros<br/>
-Sem nos dar braços para os alcançar?</p>
-</div>
-
-</div>
-
-<p><br/> </p>
-<div class='lado-a-lado'>
-<div>
-<strong>Não ser</strong>
-<p>Quem me dera voltar à inocência<br/>
-Das coisas brutas, sãs, inanimadas,<br/>
-Despir o vão orgulho, a incoerência:<br/>
-Mantos rotos de estátuas mutiladas!</p>
-
-<p>Ah! Arrancar às carnes laceradas<br/>
-Seu mísero segredo de consciência!<br/>
-Ah! Poder ser apenas florescência<br/>
-De astros em puras noites deslumbradas!</p>
-
-<p>Ser nostálgico choupo ao entardecer,<br/>
-De ramos graves, plácidos, absortos<br/>
-Na mágica tarefa de viver!</p>
-
-<p>Ser haste, seiva, ramaria inquieta,<br/>
-Erguer ao sol o coração dos mortos<br/>
-Na urna de ouro de uma flor aberta!...<p>
-</div>
-
-<video controls width="100">
-  <source src="../media/videos/2025-10-29-Sonetos-de-Florbela-Espanca/nao-ser.mp4" type="video/mp4">
-  Seu navegador não suporta vídeo HTML5.
-</video>
-
-</div>]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>Hello World</title>
-        <link>https://victorcosme.github.io/posts/Hello-World.html</link>
-        <guid>https://victorcosme.github.io/posts/Hello-World.html</guid>
-        <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
-        <description><![CDATA[<p>Hoje fui a loja de roupas para comprar uma calça <em>jeans</em>. Eu experimentei uns dez modelos distintos e, apesar disto, nenhum deles me serviu a contento. Comprei a menos pior. </p>
+        <item>
+            <title>Hello World</title>
+            <link>https://victorcosme.github.io/posts/hello-world.html</link>
+            <pubDate>2025-10-29</pubDate>
+            <description><![CDATA[<p>Hoje fui a loja de roupas para comprar uma calça <em lang='en'>jeans</em>. Eu experimentei uns dez modelos distintos e, apesar disto, nenhum deles me serviu a contento. Comprei a menos pior. </p>
 <p>Ao chegar em casa, fui rever fotos antigas no meu celular. Ainda preciso dar cabo as que restaram do meu último relacionamento. No entanto, eu preferiria mantê-las, porque passei tantos anos deletando arquivos antigos (num pretenso 'minimalismo' digital) que acabei sem foto alguma e sem lembranças.</p>
 <p>Estou pretendendo voltar para a academia. O ambiente é socialmente desgastante, mas a ideia de usar minha força para ajudar a quem precise motiva-me, e realizá-la enche-me de prazer.</p>
 <p>Descobri que para atender bem as pessoas é preciso "chaleirar" elas um pouco. Descobri também que a visão da morte, ainda que não erice o pelo, torna as noites mais longas e o sono mais leve.</p>]]></description>
-        <content:encoded><![CDATA[<p>Hoje fui a loja de roupas para comprar uma calça <em>jeans</em>. Eu experimentei uns dez modelos distintos e, apesar disto, nenhum deles me serviu a contento. Comprei a menos pior. </p>
-<p>Ao chegar em casa, fui rever fotos antigas no meu celular. Ainda preciso dar cabo as que restaram do meu último relacionamento. No entanto, eu preferiria mantê-las, porque passei tantos anos deletando arquivos antigos (num pretenso 'minimalismo' digital) que acabei sem foto alguma e sem lembranças.</p>
-<p>Estou pretendendo voltar para a academia. O ambiente é socialmente desgastante, mas a ideia de usar minha força para ajudar a quem precise motiva-me, e realizá-la enche-me de prazer.</p>
-<p>Descobri que para atender bem as pessoas é preciso "chaleirar" elas um pouco. Descobri também que a visão da morte, ainda que não erice o pelo, torna as noites mais longas e o sono mais leve.</p>]]></content:encoded>
-    </item>
-    
+        </item>
+        
 </channel>
 </rss>
