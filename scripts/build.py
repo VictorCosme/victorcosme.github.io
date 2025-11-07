@@ -40,6 +40,15 @@ def save(content, path):
         f.write(content)
 
 
+def identidade_autor():
+    id = f"""
+    <link rel="author" href="/{ABOUT_PAGE_LINK}" />
+    <link rel="me" href="mailto:{AUTHOR_MAIL}" />
+    <link rel="me" href="https://{AUTHOR_GITHUB}"/>
+    """
+    return id
+
+
 def build_post(title, post_date_yyyy_mm_dd, content, tag_list, path):
     """Gera a página de uma postagem."""
     post_html = open_template('post')
@@ -58,8 +67,9 @@ def build_post(title, post_date_yyyy_mm_dd, content, tag_list, path):
     post_html = post_html.replace("{{SITE_URL}}", SITE_URL)
     post_html = post_html.replace("{{POSTS_DIR}}", POSTS_DIR)
     post_html = post_html.replace("{{POST_PATH}}", path)
-    # post_html = post_html.replace("{{header}}", header())
     post_html = post_html.replace("{{footer}}", footer())
+    post_html = post_html.replace("{{identidade_autor}}", identidade_autor())
+
 
     save(post_html, POSTS_DIR+path)
 
@@ -69,13 +79,14 @@ def build_about_page():
     about_html = open_template('about')
 
     about_html = about_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
-    about_html = about_html.replace("{{perfis_federados}}", perfis_federados())
     about_html = about_html.replace("{{RSS_FEED_LINK}}", RSS_FEED_LINK)
     about_html = about_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
     about_html = about_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
     about_html = about_html.replace("{{header}}", header())
     about_html = about_html.replace("{{SITE_URL}}", SITE_URL)
     about_html = about_html.replace("{{footer}}", footer())
+    about_html = about_html.replace("{{identidade_autor}}", identidade_autor())
+
 
     save(about_html, ABOUT_PAGE_LINK)
 
@@ -84,17 +95,8 @@ def tags(tag_list):
     """Gera as tags de uma postagem a partir da lista de tags"""
     tags = ""
     for tag in tag_list:
-        tags += f"<a href='tags/{tag}' rel='tag'>{tag}</a>\n"
+        tags += f"<a href='tags/{tag}.html' rel='tag'>{tag}</a>\n"
     return tags
-
-
-def perfis_federados():
-    perfis = """
-    <!-- Perfis federados (IndieWeb) -->
-    <link rel="me" href="mailto:{{AUTHOR_MAIL}}">
-    <link rel="me" href="https://{{AUTHOR_GITHUB}}">
-    """
-    return perfis
 
     
 def header():
@@ -103,13 +105,12 @@ def header():
     <h1 class="p-name">{SITE_TITLE}</h1>
     <nav>
         <ul>
-            <li><a href="{INDEX_PAGE_LINK}">Início</a></li>
-            <li><a href="{ARCHIVE_PAGE_LINK}">Arquivo</a></li>
-            <li><a href="{ABOUT_PAGE_LINK}">Sobre mim</a></li>
-            <li><a href="{RSS_FEED_LINK}" target="_blank">RSS</a></li>
+            <li><a href="/{INDEX_PAGE_LINK}">Início</a></li>
+            <li><a href="/{ARCHIVE_PAGE_LINK}">Arquivo</a></li>
+            <li><a href="/{ABOUT_PAGE_LINK}">Sobre mim</a></li>
+            <li><a href="/{RSS_FEED_LINK}" target="_blank">RSS</a></li>
         </ul>
     </nav>
-    <hr />
     </header>
     """
     return header
@@ -207,18 +208,18 @@ def build_index(posts):
     index_html = index_html.replace("{{SITE_TITLE}}", SITE_TITLE)
     index_html = index_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
     index_html = index_html.replace("{{RSS_FEED_LINK}}", RSS_FEED_LINK)
-    index_html = index_html.replace("{{perfis_federados}}", perfis_federados())
     index_html = index_html.replace("{{header}}", header())
     index_html = index_html.replace("{{footer}}", footer())
     index_html = index_html.replace("{{recent_posts}}", recent_posts(posts))
+    index_html = index_html.replace("{{identidade_autor}}", identidade_autor())
     
     save(index_html, INDEX_PAGE_LINK)
 
 
 def recent_posts(posts):
     items = "\n".join(
-        f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
-        for p in posts
+            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
+            for p in posts
     )
     recent = f"""
     <h2>Posts recentes</h2>
@@ -245,7 +246,7 @@ def build_archive(posts):
     # Gera páginas individuais por tag
     for tag, tag_posts in tags_dict.items():
         tag_items = "\n".join(
-            f'<li>{p["date"]} — <a href="../{POSTS_DIR}{p["path"]}">{p["title"]}</a></li>'
+            f'<li>{p["date"]} — <a href="../../{POSTS_DIR}{p["path"]}">{p["title"]}</a></li>'
             for p in tag_posts
         )
         tag_html = open_template('tag')
@@ -255,15 +256,17 @@ def build_archive(posts):
         tag_html = tag_html.replace("{{footer}}", footer())
         tag_html = tag_html.replace("{{TAG_POSTS}}", f"<ul>{tag_items}</ul>")
         tag_html = tag_html.replace("{{SITE_URL}}", SITE_URL)
+        tag_html = tag_html.replace("{{identidade_autor}}", identidade_autor())
 
-        save(tag_html, f"tags/{tag}.html")
+
+        save(tag_html, f"{POSTS_DIR}tags/{tag}.html")
         print(f"[OK] Página da tag '{tag}' criada.")
 
     # Monta o arquivo geral
     all_tags_html = "\n".join(
-        f"<h3><a href='tags/{tag}.html'>{tag}</a></h3>\n<ul>" +
+        f"<h3><a href='{POSTS_DIR}tags/{tag}.html'>{tag}</a></h3>\n<ul>" +
         "\n".join(
-            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
+            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}.html">{p["title"]}</a></li>'
             for p in tag_posts
         ) + "\n</ul>"
         for tag, tag_posts in tags_dict.items()
@@ -273,6 +276,7 @@ def build_archive(posts):
     archive_html = archive_html.replace("{{header}}", header())
     archive_html = archive_html.replace("{{footer}}", footer())
     archive_html = archive_html.replace("{{ALL_TAGS}}", all_tags_html)
+    archive_html = archive_html.replace("{{identidade_autor}}", identidade_autor())
 
     save(archive_html, ARCHIVE_PAGE_LINK)
     print("[OK] Página archive.html criada.")
