@@ -266,7 +266,7 @@ def build_archive(posts):
     all_tags_html = "\n".join(
         f"<h3><a href='{POSTS_DIR}tags/{tag}.html'>{tag}</a></h3>\n<ul>" +
         "\n".join(
-            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}.html">{p["title"]}</a></li>'
+            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
             for p in tag_posts
         ) + "\n</ul>"
         for tag, tag_posts in tags_dict.items()

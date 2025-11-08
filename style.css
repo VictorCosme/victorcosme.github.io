@@ -98,7 +98,7 @@ pre {
 }
 
 /* === PERFIL (página "Sobre mim") === */
-.h-card {
+section.h-card {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
