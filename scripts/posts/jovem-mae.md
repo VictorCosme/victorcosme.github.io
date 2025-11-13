@@ -2,7 +2,7 @@
 title: Jovem mãe
 date: 2025-11-08
 type: blog
-tags: [maternidade, observacao,]
+tags: [cronica, maternidade, observacao,]
 path: jovem-mae.html
 ---
 Conheci recentemente (ela não me conheceu) uma jovem mãe.
