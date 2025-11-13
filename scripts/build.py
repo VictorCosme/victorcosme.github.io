@@ -263,14 +263,22 @@ def build_archive(posts):
         print(f"[OK] Página da tag '{tag}' criada.")
 
     # Monta o arquivo geral
+    max_count = max(len(posts) for posts in tags_dict.values())
+    min_count = min(len(posts) for posts in tags_dict.values())
+
+    def scale_font(count, min_size=10, max_size=32):
+        # Escala linear entre min_size e max_size
+        if max_count == min_count:
+            return (min_size + max_size) / 2
+        return min_size + (count - min_count) * (max_size - min_size) / (max_count - min_count)
+
     all_tags_html = "\n".join(
-        f"<h3><a href='{POSTS_DIR}tags/{tag}.html'>{tag}</a></h3>\n<ul>" +
-        "\n".join(
-            f'<li>{p["date"]} — <a href="{POSTS_DIR+p["path"]}">{p["title"]}</a></li>'
-            for p in tag_posts
-        ) + "\n</ul>"
-        for tag, tag_posts in tags_dict.items()
+        f"<a href='{POSTS_DIR}tags/{tag}.html' "
+        f"style='font-size:{scale_font(len(posts))}px; margin:5px; text-decoration:none;'>"
+        f"{tag}</a>"
+        for tag, posts in tags_dict.items()
     )
+
 
     archive_html = archive_html.replace("{{SITE_TITLE}}", SITE_TITLE)
     archive_html = archive_html.replace("{{header}}", header())
