@@ -1,7 +1,8 @@
 ---
 title: Hello World
 date: 2025-10-29
-tags: [pessoal, prosa]
+type: blog
+tags: [diario, motivacao, morte]
 path: hello-world.html
 ---
 
