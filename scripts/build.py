@@ -14,9 +14,9 @@ AUTHOR_MAIL = "victorcosmemelo@gmail.com"
 AUTHOR_GITHUB = "github.com/victorcosme"
 
 # Site links
-INDEX_PAGE_LINK = "index.html"
+BLOG_LINK = "blog.html"
 ARCHIVE_PAGE_LINK = "archive.html"
-ABOUT_PAGE_LINK = "about.html"
+ABOUT_PAGE_LINK = "index.html"
 RSS_FEED_LINK = "feed.xml"
 SITEMAP_LINK = "sitemap.xml"
 
@@ -56,7 +56,7 @@ def build_post(title, post_date_yyyy_mm_dd, content, tag_list, path):
     post_html = post_html.replace("{{POST_TITLE}}", title)
     post_html = post_html.replace("{{SITE_TITLE}}", SITE_TITLE)
     post_html = post_html.replace("{{ABOUT_PAGE_LINK}}", ABOUT_PAGE_LINK)
-    post_html = post_html.replace("{{INDEX_PAGE_LINK}}", INDEX_PAGE_LINK)
+    post_html = post_html.replace("{{BLOG_LINK}}", BLOG_LINK)
     post_html = post_html.replace("{{AUTHOR_MAIL}}", AUTHOR_MAIL)
     post_html = post_html.replace("{{AUTHOR_GITHUB}}", AUTHOR_GITHUB)
     post_html = post_html.replace("{{POST_DATE_YYYY_MM_DD}}", post_date_yyyy_mm_dd)
@@ -105,9 +105,9 @@ def header():
     <h1 class="p-name">{SITE_TITLE}</h1>
     <nav>
         <ul>
-            <li><a href="/{INDEX_PAGE_LINK}">Início</a></li>
-            <li><a href="/{ARCHIVE_PAGE_LINK}">Arquivo</a></li>
             <li><a href="/{ABOUT_PAGE_LINK}">Sobre mim</a></li>
+            <li><a href="/{BLOG_LINK}">Blog</a></li>
+            <li><a href="/{ARCHIVE_PAGE_LINK}">Arquivo</a></li>
             <li><a href="/{RSS_FEED_LINK}" target="_blank">RSS</a></li>
         </ul>
     </nav>
@@ -213,7 +213,7 @@ def build_index(posts):
     index_html = index_html.replace("{{recent_posts}}", recent_posts(posts))
     index_html = index_html.replace("{{identidade_autor}}", identidade_autor())
     
-    save(index_html, INDEX_PAGE_LINK)
+    save(index_html, BLOG_LINK)
 
 
 def recent_posts(posts):
