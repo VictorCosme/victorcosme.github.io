@@ -75,7 +75,6 @@ def build_post(title, post_date_yyyy_mm_dd, content, tag_list, path):
 
 
 def build_about_page():
-    """Gera a página 'Sobre mim' do blog."""
     about_html = open_template('about')
 
     about_html = about_html.replace("{{AUTHOR_NAME}}", AUTHOR_NAME)
