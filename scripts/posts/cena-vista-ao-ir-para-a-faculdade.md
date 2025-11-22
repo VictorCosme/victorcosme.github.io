@@ -1,6 +1,6 @@
 ---
 title: Cena vista ao ir para a faculdade...
-date: 2023-12-17
+date: 2025-12-17
 type: blog
 tags: [observacao, natureza, paisagem, existencialismo]
 path: cena-vista-ao-ir-para-a-faculdade.html
