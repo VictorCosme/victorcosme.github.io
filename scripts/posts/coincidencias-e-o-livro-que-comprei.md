@@ -2,7 +2,7 @@
 title: Coincidências e o livro que comprei
 date: 2025-11-06
 type: blog
-tags: [pessoal, prosa, astrologia, Fernado Pessoa]
+tags: [diario, astrologia, Fernado Pessoa]
 path: coincidencias-e-o-livro-que-comprei.html
 ---
 Uma amiga interessou-se por astrologia. Fizemos então meu mapa astral. Meu sol em áries, com ascendente em aquário e descendente em leão. O sol dela em câncer, com ascendente em leão e descendente em aquário. 
