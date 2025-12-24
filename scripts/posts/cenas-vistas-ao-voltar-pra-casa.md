@@ -1,6 +1,7 @@
 ---
 title: Cenas vistas ao voltar pra casa 
 date: 2025-11-17
+local: Campina Grande-PB
 type: blog
 tags: [observacao, cotidiano, viagem]
 path: cenas-vistas-ao-voltar-pra-casa.html

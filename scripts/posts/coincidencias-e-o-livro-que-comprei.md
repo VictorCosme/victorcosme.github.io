@@ -1,6 +1,7 @@
 ---
 title: Coincidências e o livro que comprei
 date: 2025-11-06
+local: Soledade-PB
 type: blog
 tags: [diario, astrologia, Fernado Pessoa]
 path: coincidencias-e-o-livro-que-comprei.html

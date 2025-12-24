@@ -1,6 +1,7 @@
 ---
 title: Este é o segundo post que faço hoje...
 date: 2023-12-29
+local: Soledade-PB
 type: blog
 tags: [diario, mochilismo, amadurecimento]
 path: este-e-o-segundo-post-que-faco-hoje.html

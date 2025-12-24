@@ -1,6 +1,7 @@
 ---
 title: Hoje é primeiro de janeiro...
 date: 2024-01-01
+local: Soledade-PB
 type: blog
 tags: [diario, viagem, introspeccao, ano novo, relacionamento]
 path: hoje-e-primeiro-de-janeiro.html

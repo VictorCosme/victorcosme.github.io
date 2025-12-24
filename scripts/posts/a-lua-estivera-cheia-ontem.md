@@ -1,9 +1,10 @@
 ---
 title: A Lua estivera cheia ontem...
 date: 2023-03-07
+local: Soledade-PB
 type: blog
 tags: [diario, autoanalise, existencialismo, melancolia, ambivalencia]
-path: cena-vista-ao-ir-para-a-faculdade.html
+path: a-lua-estivera-cheia-ontem.html
 ---
 A Lua estivera cheia ontem e hoje já começou a minguar. Eu gostaria de atribuir à fase a minha falta de humor. Sei que há algo de estranho comigo, porque as palavras me faltam: o texto é frio, não tem ritmo agradável e as palavras não vêm do coração. Esta anedonia é velha conhecida, este cansaço é companheiro antigo. Sinto a urgência de perguntar o porquê: mas este papel, o que responderá? Não, o problema não é a pergunta, o problema não é a causa. O problema é, apenas, e entendê-lo me basta.
 

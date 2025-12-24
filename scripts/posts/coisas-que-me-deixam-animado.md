@@ -1,6 +1,7 @@
 ---
 title: Coisas que me deixam animado
 date: 2025-11-14
+local: Soledade-PB
 type: blog
 tags: [autoconhecimento, prazer]
 path: coisas-que-me-deixam-animado.html

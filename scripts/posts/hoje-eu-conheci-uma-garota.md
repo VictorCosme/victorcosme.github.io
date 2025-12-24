@@ -1,6 +1,7 @@
 ---
 title: Hoje eu conheci uma garota...
 date: 2023-04-19
+local: Campina Grande-PB
 type: blog
 tags: [diario, observacao, olhar, placidez]
 path: hoje-eu-conheci-uma-garota.html
