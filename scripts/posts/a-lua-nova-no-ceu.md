@@ -6,6 +6,8 @@ type: blog
 tags: [haicai, lua, cotidiano, observacao]
 path: a-lua-nova-no-ceu.html
 ---
-A lua nova no céu 
+A lua nova no céu
+
 Uma menina come pipoca
+
 Depois toma um gole d’água
